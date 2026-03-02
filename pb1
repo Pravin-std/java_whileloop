@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class pb1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String correctPassword = sc.next();
+        int attempts = 3;
+        boolean accessGranted = false;
+
+        while (attempts > 0) {
+            System.out.println("Enter password:");
+            String userInput = sc.next();
+
+            if (userInput.equals(correctPassword)) {
+                System.out.println("Access granted!");
+                accessGranted = true;
+                break;
+            } else {
+                attempts--;
+                if (attempts > 0) {
+                    System.out.println("Incorrect! Attempts remaining: " + attempts);
+                } else {
+                    System.out.println("Account locked!");
+                }
+            }
+        }
+    }
+}
